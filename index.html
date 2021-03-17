@@ -14,10 +14,22 @@ a:link {
 a:active {
   color: #A9A9A9;
   }
-  body{
-  font-family: 'Roboto', sans-serif;
+
+  a:hover
+  {
+    color:white;
+    position:absolute;
+    top:100;
   }
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
 </style>
+
 
 <script src="scrollscript.js"></script>
 <script>
@@ -31,32 +43,38 @@ function showlncsoverlay(url)
 <body>
 <div id="LincWnd" style="  position: -webkit-sticky;position: sticky;top: 0px;height:100%;width:100%;display:none;" z-index="1000"><iframe id="Linc" style="width:100%;height:100%;" src="#"></iframe></div>
 
-<div id="Navigation" style=" height:120px; position: -webkit-sticky;position: sticky;top: 0;width:100%;background-color:#5c5b5e;">
+<div class="Navigation" id="Navigation" style=" height:120px; position: -webkit-sticky;position: sticky;top: 0;width:100%;background-color:#9c9c9c;">
 	<ul>
+    <p id="lol" style="position:absolute;left:200;top:80;">Did you really expect a good Website ?</p>
 	<div style="width:5%"></div>
-		<img src="logo.png" style="width:166;height:100" href="index.html">
-		<span color="white">
-			<a color="#FFFFFF" href="index.html">Main Page</a>
+		<img src="logo.png" style="width:126;height:160" href="index.html">
+		<span color="white" class="navbox" id="MP">
+
+			<a style="position:absolute;top:50;left:300;color:#000000" color="#FFFFFF" href="index.html">  Main Page</a>
 		</span>
-		
-		<span>
-			<a color="#FFFFFF" href="https://github.com/AnthonyOpenSource">My Github</a>
+
+		<span class="navbox">
+			<a style="position:absolute;top:50;left:200;color:#000000" color="#FFFFFF" href="https://github.com/AnthonyOpenSource">  My Github</a>
 		</span>
-		<span>
-			<a style="color:white" href="https://anthonyopensource.github.io/Qubzweb/">My newest game Qubz</a>
+		<span class="navbox">
+			<a onmouseover="javascript:navhover(this)" style="position:absolute;top:50;left:400;color:#000000" href="https://anthonyopensource.github.io/Qubzweb/">  My game "Qubz"</a>
 		</span>
 	</ul>
 </div>
+<script src="anim.js"></script>
 <div class="scrllable" style="z-index:100; height:100%; pg:1;  position: -webkit-sticky;position: sticky;top: 125px;" id="NAME">
 <h1 id="NAMELBL"> <script type="data">{"scrl":"1"}</script>Welcome to AnthonyMakesStuff </h1>
-<img src="anthonymakesstuff.png" style="height:0px;overflow: hidden;" id="NAMELG">
+
+<div style="width:100%;height:100%-120px;background-color:green;">
+
+</div>
 </div>
 <div style="height:100%"></div>
 <h3> I'm a creator of strange software</h3>
 <div style="margin-top:100"></div>
 <h3> Let's dive  right in</h3>
 <div class="scrllable" id="PRJ" style="height:300%;background-color:#1ea11b;position: -webkit-sticky;position: sticky;top:0px;">
-<h1>My newest project</h1>
+<h1>My Projects</h1>
 <div style="height:50%" z-index="100" class="Projectwaffle">
 <h1>GreentegCoreApp</h1>
 <p>A simple app example so you can easily create your own</p>
@@ -69,14 +87,12 @@ function showlncsoverlay(url)
 <a href="https://github.com/AnthonyOpenSource/GreentegCoreApp"><h1>Project Link</h1></a>
 <img src="coret.jpg">
 </div>
-<div style="height:50% top:0px" z-index="100" class="Projectwaffle">
-<h1>RobotRotator</h1>
-<p>Another way to controll your robot</p>
-<img src="RRV2.png">
-<p>Planned Platforms :</p>
-<p class="platformtag" style="width:45px;height:20px;">Linux</p>
-<p class="platformtag" style="width:60px;height:20px;">Mac OS</p>
-<p class="platformtag" style="width:70px;height:20px;">Windows</p>
-<h1> Planned release date January 2021</h1>
+<div class="">
+  <h1>Qubz</h1>
+  <p href="#">A very bad game.</p><br<br>
+  <p href="#">Platforms:</p>
+  <p class="platformtag" style="width:45px;height:20px;">Web</p>
+  <p class="platformtag" style="width:45px;height:20px;">Potato</p>
+  <p class="platformtag" style="width:55px;height:20px;">Toaster</p>
 </div>
 </div>

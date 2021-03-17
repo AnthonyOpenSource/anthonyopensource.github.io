@@ -3,8 +3,8 @@ var elmnts = document.getElementsByClassName("scrllable");
   {
 	  console.log(elmnts[i].dataset.scroll);
   }
-  
-function lerpColor(a, b, amount) { 
+
+function lerpColor(a, b, amount) {
 
     var ah = parseInt(a.replace(/#/g, ''), 16),
         ar = ah >> 16, ag = ah >> 8 & 0xff, ab = ah & 0xff,
@@ -28,7 +28,7 @@ function namelerpclr(pos)
 {
 	console.log(pos+"LLLLLLLL");
 	document.getElementById("NAMELBL").style.color = lerpColor(lerpColor("#000000","#42f5e9",pos/1.2),"#550045",pos/1.2);
-	document.getElementById("NAMELG").style.height = (pos/1.2)*210;
+	document.body.style.backgroundColor = lerpColor("#FFFFFF","#ff3895",pos/2);
 }
 var customfuncs = {"NAME":namelerpclr,"PRJ":prjscrl}
 var elementpgs = {"NAME":1.2,"PRJ":4}
@@ -48,7 +48,7 @@ document.addEventListener('scroll', function(e) {
 	  elmnts[i].style.position='relative';
 	  }
 	  if(elementpgs[elmnts[i].id] > scrllpgs)
-		  
+
 		  {
 			  elmnts[i].style.position='sticky';
 			  console.log(elmnts[i].id+"sticky");

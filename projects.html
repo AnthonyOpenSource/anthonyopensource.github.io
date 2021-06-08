@@ -1,0 +1,122 @@
+<style media="screen">
+  .page{
+    width:100%;
+    height:100%;
+    position:fixed;top:0px;
+    margin: 0;
+    display: inline-block;
+  }
+  @keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.floating
+{
+	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+}
+
+@font-face {
+font-family: "OxygenLight";
+src: url("Oxygen-Light.ttf");
+}
+
+
+</style>
+<body>
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<div class="" id="pagewrapper">
+  <div class="" style="" id="pages" style="position:fixed;top:0px;left:0px;">
+
+    <div class="page" style="background-color:green;right:0px;">
+        <model-viewer style="position:absolute;right:100px;top:0px;height:100%;width:25%;" id="ModelViewerA" class="floating" src="Core.glb" alt="Model" auto-rotate></model-viewer>
+      <div class="textwrapper" style="position:absolute;left:0px;top:0px;width: calc(calc(100% - 100px) - 25%);height:100%;">
+        <span style="font-family: OxygenLight;font-size:100px;">GreentegCoreApp</span>
+        <br>
+        <br>
+        <span style="position:absolute;left:10px;font-family: OxygenLight;font-size:20px;">An innovative and OpenSource app for a Tizen watch to show the temperature of an Greenteg Core.</span>
+        <br>
+        <a style="font-family: OxygenLight;font-size:20px;color:white;" href="https://github.com/AnthonyOpenSource/GreentegCoreApp/blob/master/LICENSE">LICENSE</a>
+        <br>
+        <a style="font-family: OxygenLight;font-size:20px;color:white;" href="https://github.com/AnthonyOpenSource/GreentegCoreApp/">GitHub</a>
+      </div>
+
+    </div>
+    <div class="page" style="background-color:blue;right:0px;">
+      <model-viewer style="position:absolute;right:100px;top:0px;height:100%;width:25%;" id="ModelViewerA" class="floating" src="BusBoardUnfinished.glb" alt="Model" auto-rotate></model-viewer>
+    <div class="textwrapper" style="position:absolute;left:0px;top:0px;width: calc(calc(100% - 100px) - 25%);height:100%;">
+      <span style="font-family: OxygenLight;font-size:100px;">BusBoard</span>
+      <br>
+      <br>
+      <span style="position:absolute;left:10px;font-family: OxygenLight;font-size:20px;">  A simple ish board to convert different signal busses in to others like UART <-> SPI ,<br> it's still under development there isn't even an pcb 3d model so i added a 3d model that shows how the pcb would likely look like.</span>
+    </div>
+    </div>
+  </div>
+  <div class="" id="pagefooter" style="background-color:black;position:absolute;width:100%;z-index:-1;">
+
+  </div>
+</div>
+
+<script>
+
+  function getScrollbarWidth() {
+
+  // Creating invisible container
+  const outer = document.createElement('div');
+  outer.style.visibility = 'hidden';
+  outer.style.overflow = 'scroll'; // forcing scrollbar to appear
+  outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
+  document.body.appendChild(outer);
+
+  // Creating inner element and placing it in the container
+  const inner = document.createElement('div');
+  outer.appendChild(inner);
+
+  // Calculating difference between container's full width and the child width
+  const scrollbarWidth = (outer.offsetWidth - inner.offsetWidth);
+
+  // Removing temporary elements from the DOM
+  outer.parentNode.removeChild(outer);
+
+  return scrollbarWidth;
+
+}
+
+  var scw = getScrollbarWidth();
+
+  var pgs = document.getElementById("pages").getElementsByClassName("page");
+  for(var i = 0;i < pgs.length;i++){
+    var pw = window.innerWidth*i;
+    pw = pw - (window.scrollY-pgs[i].getBoundingClientRect().top);
+    pgs[i].style.left = pw+"px";
+  }
+
+  function scrl()
+  {
+    var pgs = document.getElementById("pages").getElementsByClassName("page");
+    for(var i = 0;i < pgs.length;i++){
+      var pw = window.innerWidth*i;
+      pw = pw - (window.scrollY-pgs[i].getBoundingClientRect().top);
+      pgs[i].style.left = pw+"px";
+      console.log(window.scrollY-pgs[i].getBoundingClientRect().top);
+    }
+  }
+
+  document.addEventListener('scroll', function(e) {
+    console.log("scroll");
+    scrl();
+  });
+
+  document.getElementById("pagefooter").style.height = (((pgs.length*100)+100)+0)+"%";
+</script>
+</body>

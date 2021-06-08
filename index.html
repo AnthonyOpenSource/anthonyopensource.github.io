@@ -1,98 +1,332 @@
-<head>
-
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
-<style>
-
-font-family: 'Roboto', sans-serif;
-
-a:link {
-  color: white;
-  font-size:40;
-  margin-left:10;
-}
-a:active {
-  color: #A9A9A9;
+<style media="screen">
+  .page{
+    width:100%;
+    height:100%;
+    position:relative;
+    margin: 0;
+    display: inline-block;
   }
-
-  a:hover
-  {
-    color:white;
-    position:absolute;
-    top:100;
+  @keyframes float {
+  0% {
+    transform: translatey(0px);
   }
-
-body{
-  font-family: 'Roboto', sans-serif;
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
 
+.floating
+{
+	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+}
 
+@font-face {
+font-family: "OxygenLight";
+src: url("Oxygen-Light.ttf");
+}
+
+model-viewer
+{
+}
+
+@keyframes arrowslide {
+  0% {
+    right:100px;
+  }
+  25% {
+    right:0px;
+  }
+  50%{
+    right:50px;
+  }
+  75%{
+    right:0px;
+  }
+  100% {
+    right:100px;
+  }
+}
+
+@keyframes arrowslideud {
+  0% {
+    bottom:150px;
+  }
+  25% {
+    bottom:50px;
+  }
+  50%{
+    bottom:100px;
+  }
+  75%{
+    bottom:50px;
+  }
+  100% {
+    bottom:150px;
+  }
+}
+
+.arrowscrollright
+{
+
+}
+
+@keyframes move {
+  from {
+     color: #6666ff;
+   }
+   10% {
+     color: #0099ff;
+   }
+   50% {
+     color: #00ff00;
+   }
+   75% {
+     color: #ff3399;
+   }
+   100% {
+     color: #6666ff;
+   }
+}
+
+.rainbowArrow {
+  color:#000000;
+  animation: move 6s linear infinite;
+}
 
 </style>
-
-
-<script src="scrollscript.js"></script>
-<script>
-function showlncsoverlay(url)
- {
- window.open(url,"AnthonyMakesStuffLicenseViewer v1","scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=300,left=100,top=100");
- }
-</script>
-<link href="style.css" rel="stylesheet">
-</head>
 <body>
-<div id="LincWnd" style="  position: -webkit-sticky;position: sticky;top: 0px;height:100%;width:100%;display:none;" z-index="1000"><iframe id="Linc" style="width:100%;height:100%;" src="#"></iframe></div>
 
-<div class="Navigation" id="Navigation" style=" height:120px; position: -webkit-sticky;position: sticky;top: 0;width:100%;background-color:#9c9c9c;">
-	<ul>
-    <p id="lol" style="position:absolute;left:200;top:80;">Did you really expect a good Website ?</p>
-	<div style="width:5%"></div>
-		<img src="logo.png" style="width:126;height:160" href="index.html">
-		<span color="white" class="navbox" id="MP">
+<div style="position:fixed;bottom:0px;left:0px;z-index:10;"><p>&copy AnthonyMakesStuff 2021</p><a href="?forcemobile=true" id="switchver">Mobile version</a></div>
 
-			<a style="position:absolute;top:50;left:300;color:#000000" color="#FFFFFF" href="index.html">  Main Page</a>
-		</span>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-		<span class="navbox">
-			<a style="position:absolute;top:50;left:200;color:#000000" color="#FFFFFF" href="https://github.com/AnthonyOpenSource">  My Github</a>
-		</span>
-		<span class="navbox">
-			<a onmouseover="javascript:navhover(this)" style="position:absolute;top:50;left:400;color:#000000" href="https://anthonyopensource.github.io/Qubzweb/">  My game "Qubz"</a>
-		</span>
-	</ul>
-</div>
-<script src="anim.js"></script>
-<div class="scrllable" style="z-index:100; height:100%; pg:1;  position: -webkit-sticky;position: sticky;top: 125px;" id="NAME">
-<h1 id="NAMELBL"> <script type="data">{"scrl":"1"}</script>Welcome to AnthonyMakesStuff </h1>
+<div class="" id="pagewrapper">
+  <div class="" style="" id="pages" style="position:fixed;top:0px;left:0px;">
+    <div class="page" style="background-color:white;right:0px;width:100%;height:100%;">
+      <span style="text-align: center;font-family: OxygenLight;font-size:100px;">Welcome</span>
+      <br>
+      <br>
+      <span style="text-align: center;position:absolute;left:10px;font-family: OxygenLight;font-size:20px;">To my webpage.</span>
+      <span style="text-align: center;position:absolute;left:10px;top:170px;font-family: OxygenLight;font-size:20px;">Here is the home of my strange projects.</span>
+      <div class="" style="vertical-align: middle;">
+      <div class="arrowscrollright">
+        <svg style="width:100%;height:100%;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="rainbowArrow bi bi-arrow-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+        </svg>
+        <p style="text-align: center;position:absolute;left:10px;font-family: OxygenLight;font-size:20px;">Let's take a look at the Projects</p>
+      </div>
+    </div>
+    </div>
+    <div class="page" style="background-color:green;right:0px;">
+        <model-viewer style="position:absolute;right:100px;top:0px;height:100%;width:25%;" id="ModelViewerA" class="floating" src="Core.glb" alt="Model" auto-rotate></model-viewer>
+      <div class="textwrapper" style="position:absolute;left:0px;top:0px;width: calc(calc(100% - 100px) - 25%);height:100%;">
+        <span style="font-family: OxygenLight;font-size:100px;">GreentegCoreApp</span>
+        <br>
+        <br>
+        <span style="position:absolute;font-family: OxygenLight;font-size:20px;">An innovative and OpenSource app for a Tizen watch to show the temperature of an Greenteg Core.</span>
+        <br>
+        <br>
+        <br>
+        <a style="font-family: OxygenLight;font-size:20px;color:white;" href="https://github.com/AnthonyOpenSource/GreentegCoreApp/blob/master/LICENSE">LICENSE</a>
+        <br>
+        <a style="font-family: OxygenLight;font-size:20px;color:white;" href="https://github.com/AnthonyOpenSource/GreentegCoreApp/">GitHub</a>
+      </div>
 
-<div style="width:100%;height:100%-120px;background-color:green;">
+    </div>
+    <div class="page" style="background-color:blue;right:0px;">
+      <model-viewer style="position:absolute;right:100px;top:0px;height:100%;width:25%;" id="ModelViewerA" class="floating" src="BusBoardUnfinished.glb" alt="Model" auto-rotate></model-viewer>
+    <div class="textwrapper" style="position:absolute;left:0px;top:0px;width: calc(calc(100% - 100px) - 25%);height:100%;">
+      <span style="font-family: OxygenLight;font-size:100px;color:white;">BusBoard</span>
+      <br>
+      <br>
+      <span style="position:absolute;left:10px;font-family: OxygenLight;font-size:20px;color:white;">  A simple ish board to convert different signal busses in to others like UART <-> SPI ,<br>My first self developed commercial product !<br><a style="color:white;" href="busboardspcs.html">Planned Specs</a><br> it's still under development there isn't even an pcb 3d model so i added a 3d model that shows how the pcb would likely look like.</span>
+    </div>
+    </div>
+    <div class="page" style="background-color:cyan;right:0px;width:100%;height:100%;">
+      <model-viewer style="position:absolute;right:100px;top:0px;height:100%;width:25%;" id="ModelViewerA" class="floating" src="dll3d.glb" alt="Model" auto-rotate></model-viewer>
+      <div class="textwrapper" style="position:absolute;left:0px;top:0px;width: calc(calc(100% - 100px) - 25%);height:100%;">
+        <span style="font-family: OxygenLight;font-size:100px;">LibBLEHTP</span>
+        <br>
+        <br>
+        <span style="font-family: OxygenLight;font-size:20px;">A simple OpenSource Library to decode BLEHTP<sup>(BLE<sup>(Bluetooth Low Energy)</sup> Healt Thermometer Protocol)</sup> data.</span>
+        <br>
+        <br>
+        <style media="screen">
+          .button1 {padding: 10px 24px;}
 
+        </style>
+        <div style="position:absolute;left:10px;" class="dl" id="LibBLEHTPDownloads">
+          <p>The downloads are directly from GitHub</p>
+          <button class="button1" type="button" id="CSdll" name="button">Download the C# dll. <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/> </svg></button>
+
+          <br>
+
+          <button class="button1" type="button" id="CSsrc" name="button">Download the C# sources. <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/> </svg></button>
+
+          <br>
+
+          <button class="button1" type="button" id="JVsrc" name="button">Download the Java Sources. <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/> </svg></button>
+
+          <br>
+
+          <button class="button1" type="button" id="JVjar" name="button">Download the Java JAR. <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/> </svg></button>
+
+          <br>
+
+          <button class="button1" type="button" id="PYsrc" name="button">Download the Python sources. <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/> </svg></button>
+
+          <br>
+
+          <button class="button1" type="button" id="Csrc" name="button">Download the C or C++ sources. <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/> </svg></button>
+
+          <br>
+
+          <a href="https://github.com/AnthonyOpenSource/LibBLEHTP">The GitHub Page for this project</a>
+
+        </div>
+        <script type="text/javascript">
+
+          var urlbase = "https://github.com/AnthonyOpenSource/LibBLEHTP/releases/download/1.0/";
+
+          var elmnt = document.getElementById("LibBLEHTPDownloads");
+
+          var btns = elmnt.getElementsByTagName("button");
+
+          var files = {
+            "Csrc":["LibBLEHTP.c","LibBLEHTP.h"],
+            "CSdll":["LibBLEHTP.dll"],
+            "JVjar":["LibBLEHTP.jar"],
+            "JVsrc":["LibBLEHTP.java"],
+            "PYsrc":["LibBLEHTP.py"],
+            "CSsrc":["Src.cs"]
+          };
+
+          for(var i = 0;i < btns.length;i++)
+          {
+              btns[i].setAttribute("onclick","dload("+'"'+btns[i].id+'"'+")");
+          }
+
+          function dload(flnm)
+          {
+            var filesx = files[flnm];
+            for(var f = 0;f < filesx.length;f++){
+              window.open(urlbase+filesx[f]);
+            }
+          }
+
+        </script>
+<br>
+<br>
+
+      </div>
+    </div>
+  </div>
+  <div class="" id="pagefooter" style="background-color:black;position:absolute;width:100%;z-index:-1;">
+
+  </div>
 </div>
-</div>
-<div style="height:100%"></div>
-<h3> I'm a creator of strange software</h3>
-<div style="margin-top:100"></div>
-<h3> Let's dive  right in</h3>
-<div class="scrllable" id="PRJ" style="height:300%;background-color:#1ea11b;position: -webkit-sticky;position: sticky;top:0px;">
-<h1>My Projects</h1>
-<div style="height:50%" z-index="100" class="Projectwaffle">
-<h1>GreentegCoreApp</h1>
-<p>A simple app example so you can easily create your own</p>
-<a href="javascript:showlncsoverlay('https://raw.githubusercontent.com/AnthonyOpenSource/GreentegCoreApp/master/LICENSE')" ><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
-  <path d="M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z"/>
-</svg>License</a>
-<p>Platforms :</p>
-<p class="platformtag" style="width:45px;height:20px;">Tizen</p>
-<a href="https://github.com/AnthonyOpenSource/GreentegCoreApp"><h1>Project Link</h1></a>
-<img src="coret.jpg">
-</div>
-<div class="">
-  <h1>Qubz</h1>
-  <p href="#">A very bad game.</p><br<br>
-  <p href="#">Platforms:</p>
-  <p class="platformtag" style="width:45px;height:20px;">Web</p>
-  <p class="platformtag" style="width:45px;height:20px;">Potato</p>
-  <p class="platformtag" style="width:55px;height:20px;">Toaster</p>
-</div>
-</div>
+
+<script>
+  function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+  var forcemobile = false;
+  var forcedesktop = false;
+  if(getParameterByName("forcemobile") != undefined)
+  {
+    forcemobile = true;
+  }
+  if(getParameterByName("forcedesktop") != undefined)
+  {
+    forcedesktop = true;
+  }
+  if(((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) || forcemobile)&&!forcedesktop){
+    document.getElementById("switchver").href = "?forcedesktop=true";
+    document.getElementById("switchver").innerHTML = "Desktop Version";
+    var ars= document.getElementsByClassName("arrowscrollright");
+    for(var i = 0;i < ars.length;i++){
+      var arr = ars[i];
+      arr.style.animation = "arrowslideud 6s ease-in-out infinite";
+      arr.style.position = "absolute";
+      arr.style.left = "calc(50% - 5%)";
+      arr.style.width = "10%";
+      arr.style.height = "10%";
+      arr.style.transform = "rotate(90deg)";
+    }
+  }else{
+    if(true){
+  var ars= document.getElementsByClassName("arrowscrollright");
+  for(var i = 0;i < ars.length;i++){
+    var arr = ars[i];
+    arr.style.animation = "arrowslide 6s ease-in-out infinite";
+    arr.style.position = "absolute";
+    arr.style.right ="0px";
+    arr.style.width = "10%";
+    arr.style.height = "10%";
+    arr.style.transform = "rotate(0deg)";
+  }
+
+  function getScrollbarWidth() {
+
+  // Creating invisible container
+  const outer = document.createElement('div');
+  outer.style.visibility = 'hidden';
+  outer.style.overflow = 'scroll'; // forcing scrollbar to appear
+  outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
+  document.body.appendChild(outer);
+
+  // Creating inner element and placing it in the container
+  const inner = document.createElement('div');
+  outer.appendChild(inner);
+
+  // Calculating difference between container's full width and the child width
+  const scrollbarWidth = (outer.offsetWidth - inner.offsetWidth);
+
+  // Removing temporary elements from the DOM
+  outer.parentNode.removeChild(outer);
+
+  return scrollbarWidth;
+
+}
+
+  var scw = getScrollbarWidth();
+
+  var pgs = document.getElementById("pages").getElementsByClassName("page");
+  for(var i = 0;i < pgs.length;i++){
+    var pw = window.innerWidth*i;
+    pw = pw - (window.scrollY-pgs[i].getBoundingClientRect().top);
+    pgs[i].style.position = "fixed";
+    pgs[i].style.top = "0px";
+    pgs[i].style.left = pw+"px";
+  }
+
+  function scrl()
+  {
+    var pgs = document.getElementById("pages").getElementsByClassName("page");
+    for(var i = 0;i < pgs.length;i++){
+      var pw = window.innerWidth*i;
+      pw = pw - (window.scrollY-pgs[i].getBoundingClientRect().top);
+      pgs[i].style.left = pw+"px";
+      console.log(window.scrollY-pgs[i].getBoundingClientRect().top);
+    }
+  }
+
+  document.addEventListener('scroll', function(e) {
+    console.log("scroll");
+    scrl();
+  });
+
+  document.getElementById("pagefooter").style.height = (((pgs.length*100)+100)+(50*pgs.length))+"%";
+}
+}
+</script>
+</body>

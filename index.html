@@ -328,5 +328,13 @@ model-viewer
   document.getElementById("pagefooter").style.height = (((pgs.length*100)+100)+(50*pgs.length))+"%";
 }
 }
+var pgs = document.getElementById("pages").getElementsByClassName("page");
+var pgss = window.innerWidth/pgs.length;
+
+if(getParameterByName("scrollpage") != undefined)
+{
+	window.scrollTo(0,parseFloat(getParameterByName("scrollpage"))*pgss);
+}
+	
 </script>
 </body>

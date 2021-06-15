@@ -329,11 +329,11 @@ model-viewer
 }
 }
 var pgs = document.getElementById("pages").getElementsByClassName("page");
-var pgss = window.innerWidth/pgs.length;
+var pgss = window.innerWidth;
 
 if(getParameterByName("scrollpage") != undefined)
 {
-	window.scrollTo(0,parseFloat(getParameterByName("scrollpage"))*pgss);
+	window.scrollTo(0,parseInt(getParameterByName("scrollpage"))*pgss);
 }
 	
 </script>
